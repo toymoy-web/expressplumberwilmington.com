@@ -1,0 +1,24 @@
+(function(){
+  var t=document.getElementById('mob-toggle'),d=document.getElementById('mob-drawer'),o=document.getElementById('mob-overlay'),c=document.getElementById('drawer-close');
+  if(!t||!d||!o)return;
+  function open(){d.removeAttribute('hidden');o.classList.add('visible');t.setAttribute('aria-expanded','true');t.setAttribute('aria-label','Close navigation menu');document.documentElement.style.overflow='hidden';}
+  function close(){d.setAttribute('hidden','');o.classList.remove('visible');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open navigation menu');document.documentElement.style.overflow='';}
+  t.addEventListener('click',function(){t.getAttribute('aria-expanded')==='true'?close():open();});
+  if(c)c.addEventListener('click',close);
+  o.addEventListener('click',close);
+  d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+
+(function(){
+  var items=document.querySelectorAll('.faq-item');
+  items.forEach(function(item){
+    var q=item.querySelector('.faq-q');
+    if(!q)return;
+    q.addEventListener('click',function(){
+      var wasOpen=item.classList.contains('open');
+      items.forEach(function(i){i.classList.remove('open');var b=i.querySelector('.faq-q');if(b)b.setAttribute('aria-expanded','false');});
+      if(!wasOpen){item.classList.add('open');q.setAttribute('aria-expanded','true');}
+    });
+  });
+})();
