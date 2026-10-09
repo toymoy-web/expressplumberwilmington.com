@@ -203,3 +203,5 @@ footer.site-footer{background:var(--primary-dk);color:#CFC9AF;padding:64px 0 24p
 .accent-text{color:var(--accent);}
 .white-text{color:#fff;}
 
+
+.hero-grid.no-visual{grid-template-columns:1fr;max-width:860px;}

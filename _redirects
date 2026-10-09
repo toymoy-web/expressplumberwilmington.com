@@ -1,1 +1,5 @@
-# No redirects needed yet. Cloudflare Pages resolves slug/index.html natively.
+# Retired location pages (too distant from the Wilmington base). 301 to the service area hub.
+/southport-plumber /service-area/ 301
+/southport-plumber/ /service-area/ 301
+/oak-island-plumber /service-area/ 301
+/oak-island-plumber/ /service-area/ 301
